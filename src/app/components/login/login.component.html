@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">POST App Login</h2>
+          <form>
+            <div class="form-group">
+              <label>Your Username:</label>
+              <input name="username" class="form-control" [(ngModel)]="username" placeholder="Username" type="text">
+            </div>
+            <div class="form-group">
+              <label>Your Password:</label>
+              <input name="password" class="form-control" [(ngModel)]="password" placeholder="Password" type="password">
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn-block" (click)="validation()" (click)="navigateToPosts()">Login</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
