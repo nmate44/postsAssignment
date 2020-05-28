@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {GetpostsService} from '../../services/getposts.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-posts',
@@ -12,6 +13,7 @@ export class PostsComponent implements OnInit {
 
   constructor(
     private getpostsService: GetpostsService,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -22,6 +24,10 @@ export class PostsComponent implements OnInit {
       this.posts = this.getpostsService.list();
     }
 
+  }
+
+  toAddScreen(): void {
+    this.router.navigate(['crud']);
   }
 
   deletePost(id: number): void {

@@ -11,12 +11,14 @@ const CACHE_KEY = 'httpPostCache';
 })
 export class GetpostsService {
 
+  private nextId: number;
   posts;
 
   constructor( private http: HttpClient ) {
     if (this.list().length === 0) {
       this.initializePosts();
     }
+    this.nextId = this.list().length;
   }
 
   public getPosts(): Observable<Post[]>{
@@ -48,6 +50,16 @@ export class GetpostsService {
     posts.push(post);
 
     localStorage.setItem(CACHE_KEY, JSON.stringify(posts));
+  }
+
+  public newPost(userId: number, title: string, body: string): void {
+    let post = new Post(userId, this.nextId, title, body);
+
+    let posts = this.list();
+    posts.push(post);
+
+    localStorage.setItem(CACHE_KEY, JSON.stringify(posts));
+    this.nextId++;
   }
 
   public deletePost(id: number): void {
