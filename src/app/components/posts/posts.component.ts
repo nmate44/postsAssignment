@@ -21,6 +21,15 @@ export class PostsComponent implements OnInit {
     } else {
       this.posts = this.getpostsService.list();
     }
+
+  }
+
+  deletePost(id: number): void {
+    this.getpostsService.deletePost(id);
+  }
+
+  reload(): void {
+    window.location.reload();
   }
 
 }

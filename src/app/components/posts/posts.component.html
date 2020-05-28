@@ -9,6 +9,8 @@
           <p class="card-text">
             <small class="text-muted">Posted by: {{ post.userId }}</small>
           </p>
+              <button class="btn-secondary">Edit</button>
+              <button class="btn-secondary" (click)="deletePost(post.id)" (click)="reload()">Delete</button>
         </div>
       </div>
     </div>

@@ -49,4 +49,10 @@ export class GetpostsService {
 
     localStorage.setItem(CACHE_KEY, JSON.stringify(posts));
   }
+
+  public deletePost(id: number): void {
+    let posts = this.list();
+    posts = posts.filter((post) => post.id !== id);
+    localStorage.setItem(CACHE_KEY, JSON.stringify(posts));
+  }
 }
