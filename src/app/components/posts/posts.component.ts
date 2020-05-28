@@ -15,7 +15,12 @@ export class PostsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.posts = this.getpostsService.posts;
+
+    if (this.getpostsService.list().length === 0) {
+      setTimeout(() => (this.posts = this.getpostsService.list()), 1000);
+    } else {
+      this.posts = this.getpostsService.list();
+    }
   }
 
 }
