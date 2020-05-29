@@ -21,7 +21,16 @@ export class CrudinterfaceComponent implements OnInit {
   }
 
   newPost(): void {
-    this.getpostsService.newPost(this.userId, this.title, this.body);
+    if (this.userId === null) {
+      alert('Fill all the input fields correctly!');
+    } else if (this.title === null) {
+      alert('Fill all the input fields correctly!');
+    } else if (this.body == null) {
+      alert('Fill all the input fields correctly!');
+    } else {
+      this.getpostsService.newPost(this.userId, this.title, this.body);
+      this.back();
+    }
   }
 
   back(): void {
