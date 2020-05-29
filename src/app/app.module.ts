@@ -9,6 +9,8 @@ import { LoginComponent } from './components/login/login.component';
 import {FormsModule} from '@angular/forms';
 import {GetpostsService} from './services/getposts.service';
 import { CrudinterfaceComponent } from './components/crudinterface/crudinterface.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { CrudinterfaceComponent } from './components/crudinterface/crudinterface
     AppComponent,
     PostsComponent,
     LoginComponent,
-    CrudinterfaceComponent
+    CrudinterfaceComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

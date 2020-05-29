@@ -1,0 +1,11 @@
+.card-title {
+  text-align: center;
+}
+
+.btn-block {
+  border: none;
+  padding: 10px;
+  background-color: #2e2f30;
+  font-size: 24px;
+  color: white;
+}
