@@ -8,7 +8,8 @@ import {CrudinterfaceComponent} from './components/crudinterface/crudinterface.c
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'posts'},
   { path: 'posts', component: PostsComponent, canActivate: [AuthGuardGuard] },
-  { path: 'crud', component: CrudinterfaceComponent, canActivate: [AuthGuardGuard] },
+  { path: 'crud/new', component: CrudinterfaceComponent, canActivate: [AuthGuardGuard] },
+  { path: 'crud/:id', component: CrudinterfaceComponent, canActivate: [AuthGuardGuard] },
   { path: 'login', component: LoginComponent }
 ];
 
