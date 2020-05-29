@@ -53,7 +53,7 @@ export class GetpostsService {
     let posts = this.list();
     posts.push(post);
 
-    posts.sort((p1, p2) => (p1.id > p2.id) ? 1 : -1);
+    posts.sort((p1, p2) => (p1.id < p2.id) ? 1 : -1);
     localStorage.setItem(CACHE_KEY, JSON.stringify(posts));
   }
 
@@ -63,6 +63,7 @@ export class GetpostsService {
     let posts = this.list();
     posts.push(post);
 
+    posts.sort((p1, p2) => (p1.id < p2.id) ? 1 : -1);
     localStorage.setItem(CACHE_KEY, JSON.stringify(posts));
     this.nextId++;
     console.log(this.nextId);
@@ -91,7 +92,7 @@ export class GetpostsService {
     let post = new Post(userId, id, title, body);
     posts = posts.filter((p) => p.id !== id);
     posts.push(post);
-    posts.sort((p1, p2) => (p1.id > p2.id) ? 1 : -1);
+    posts.sort((p1, p2) => (p1.id < p2.id) ? 1 : -1);
     localStorage.setItem(CACHE_KEY, JSON.stringify(posts));
   }
 
@@ -101,7 +102,7 @@ export class GetpostsService {
     if (idCheck.length === 0) {
       this.nextId = 0;
     } else {
-      let maxId = idCheck[idCheck.length - 1].id;
+      let maxId = idCheck[0].id;
       this.nextId = maxId + 1;
     }
     console.log(this.nextId);
