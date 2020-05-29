@@ -1,27 +1,17 @@
 # PostsAssignment
+Angular beadandó a PHP Programozás órára. Az app az összes elvárt dolgot tudja.
+- API-ról adatok
+- local storage-be mentés és onnan használat
+- Login (username: admin , password: admin)
+- Listázás
+- CRUD
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.6.
+Ezt az API-t használtam:
+https://jsonplaceholder.typicode.com/posts
 
-## Development server
+## Hibák, megjegyzések
+Valamilyen okból kifolyólag amikor épp olyan kedve van a rendszernek, ha nem kerül frissítésre manuálisan az első belépés után a screen, akkor megakad az initializeing subscribe részénél és képes ~60 sec-et is ott várni mire beolvassa a local storage-be az adatokat. Ezt akárhogy próbáltam, sehogy sem tudtam kijavítani, nem értem miért csinálja, főleg hogy néha viszont teljesen jól lefut ha kitörlöm a local storage-et.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Nálam az input fieldek megkötésénél valamiért nem volt hajlandó figyelembe venni a type=... paramétert, így sajnos a userId-nél ahol number kéne, lehet nem megfelelő inputot is megadni.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Németh Máté (K5BPCA)
