@@ -12,8 +12,8 @@ https://jsonplaceholder.typicode.com/posts
 Az appot WebStorm-ban fejlesztettem.
 
 ## Fontosabb megjegyzések
-Valamilyen okból kifolyólag amikor épp olyan kedve van a rendszernek, ha nem kerül frissítésre manuálisan az első belépés után a screen, akkor megakad az initializing subscribe részénél és képes ~60 sec-et is ott várni mire beolvassa a local storage-be az adatokat. Ezt akárhogy próbáltam, sehogy sem tudtam kijavítani, nem jöttem rá miért csinálja. (Használtam setTimeout-ot a post komponensnél ami néha megoldotta, néha meg nem.)
+Néha az első cache-elésnél login után manuálisan frissíteni kell az oldalt hogy behozza az adatokat a local storage-ből, de az esetek ~90%-ában teljesen jól működik. Sokáig tesztelgettem, próbálgattam, de még nem jöttem rá mi idézi elő a bugot ami megakasztja a store-olás folyamatát x ms-re.
 
-Nálam az input fieldek megkötésénél valamiért nem volt hajlandó figyelembe venni a type=... paramétert, így sajnos a userId-nél ahol number kéne, lehet nem megfelelő inputot is megadni.
+Nálam az input fieldek megkötésénél valamiért nem vette be a type=... paramétert, így sajnos a userId-nél ahol number-t vár, lehet nem megfelelő inputot is megadni.
 
 ## Németh Máté (K5BPCA)
